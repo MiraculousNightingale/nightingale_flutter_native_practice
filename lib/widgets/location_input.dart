@@ -53,6 +53,7 @@ class _LocationInputState extends State<LocationInput> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Column(
       children: [
         Container(
@@ -60,10 +61,13 @@ class _LocationInputState extends State<LocationInput> {
           width: double.infinity,
           decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
           child: _previewImageUrl == null
-              ? const Center(
+              ? Center(
                   child: Text(
                     'No Location Chosen',
                     textAlign: TextAlign.center,
+                    style: theme.textTheme.bodyLarge!.copyWith(
+                      color: theme.colorScheme.onBackground,
+                    ),
                   ),
                 )
               : Image.network(

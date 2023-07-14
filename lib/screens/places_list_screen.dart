@@ -10,6 +10,7 @@ class PlacesListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Places'),
@@ -51,8 +52,13 @@ class PlacesListScreen extends StatelessWidget {
                           },
                         ),
                       ),
-                child: const Center(
-                  child: Text('Got no places yet, start adding some!'),
+                child: Center(
+                  child: Text(
+                    'Got no places yet, start adding some!',
+                    style: theme.textTheme.titleMedium!.copyWith(
+                      color: theme.colorScheme.onBackground,
+                    ),
+                  ),
                 ),
               ),
       ),

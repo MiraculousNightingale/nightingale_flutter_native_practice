@@ -47,40 +47,47 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
       appBar: AppBar(
         title: const Text('Add a New Place'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                children: [
-                  TextField(
-                    controller: _titleController,
-                    decoration: const InputDecoration(
-                      labelText: 'Title',
-                    ),
+      body: LayoutBuilder(
+        builder: (context, constraints) => SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: constraints.maxHeight,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      TextField(
+                        controller: _titleController,
+                        decoration: const InputDecoration(
+                          labelText: 'Title',
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      ImageInput(onSelectImage: _selectImage),
+                      const SizedBox(height: 10),
+                      LocationInput(onSelectPlace: _selectPlace),
+                    ],
                   ),
-                  const SizedBox(height: 10),
-                  ImageInput(onSelectImage: _selectImage),
-                  const SizedBox(height: 10),
-                  LocationInput(onSelectPlace: _selectPlace),
-                ],
-              ),
+                ),
+                ElevatedButton.icon(
+                  onPressed: _savePlace,
+                  icon: const Icon(Icons.add),
+                  label: const Text('Add Place'),
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0.0,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    primary: Theme.of(context).colorScheme.secondary,
+                  ),
+                ),
+              ],
             ),
           ),
-          ElevatedButton.icon(
-            onPressed: _savePlace,
-            icon: const Icon(Icons.add),
-            label: const Text('Add Place'),
-            style: ElevatedButton.styleFrom(
-              elevation: 0.0,
-              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              primary: Theme.of(context).colorScheme.secondary,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
