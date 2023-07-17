@@ -66,6 +66,9 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                         decoration: const InputDecoration(
                           labelText: 'Title',
                         ),
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.onBackground,
+                        ),
                       ),
                       const SizedBox(height: 10),
                       ImageInput(onSelectImage: _selectImage),

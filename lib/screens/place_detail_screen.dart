@@ -20,9 +20,17 @@ class PlaceDetailScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(
+          Container(
             height: 250,
             width: double.infinity,
+            decoration: const BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 10,
+                  spreadRadius: 4,
+                ),
+              ],
+            ),
             child: Image.file(
               selectedPlace.image,
               fit: BoxFit.cover,
@@ -32,18 +40,21 @@ class PlaceDetailScreen extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Text(
-            selectedPlace.location.address ?? '',
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 20,
-              color: Colors.grey,
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: Text(
+              selectedPlace.location.address ?? '',
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 20,
+                color: Colors.grey,
+              ),
             ),
           ),
           const SizedBox(
             height: 10,
           ),
-          TextButton(
+          OutlinedButton(
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
