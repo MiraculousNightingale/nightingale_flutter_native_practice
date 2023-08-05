@@ -1,16 +1,15 @@
-# nightingale_flutter_native_practice
+# Native Features App
 
-A new Flutter project.
+An application with native features, namely camera and geolocation, which I created to practice Flutter development.
 
-## Getting Started
+Based on the udemy course which I followed. Has the bare basics just to try out the packages.
 
-This project is a starting point for a Flutter application.
+## Preview
 
-A few resources to get you started if this is your first Flutter project:
+https://github.com/MiraculousNightingale/nightingale_flutter_native_practice/assets/34477181/fa41c2a2-dbd8-4102-b3b7-9b1766568ac7
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## How to set-up and run the project
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Pull the project from the repo.
+- Run `flutter pub get`.
+- Launch the device/emulator of your choice and run the app on it.
