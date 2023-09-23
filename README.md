@@ -6,7 +6,7 @@ Based on the udemy course which I followed. Has the bare basics just to try out 
 
 ## Preview
 
-https://github.com/MiraculousNightingale/nightingale_flutter_native_practice/assets/34477181/fa41c2a2-dbd8-4102-b3b7-9b1766568ac7
+https://github.com/MiraculousNightingale/nightingale_flutter_native_practice/assets/34477181/b527494e-7e86-48f2-a681-e9f0fded0994
 
 ## How to set-up and run the project
 
